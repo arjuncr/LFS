@@ -8,7 +8,8 @@ git clone --recurse-submodules https://github.com/arjuncr/LFS.git
 
 Building LFS  
 
-./build_lfs.sh 
+./build_lfs.sh   
+
 #################################################################################
 
 ############################Utility to Build LFS ###########################
