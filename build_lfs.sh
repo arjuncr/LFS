@@ -17,7 +17,8 @@ export WORKDIR=${BASEDIR}/workspace
 export SOURCEDIR=${WORKDIR}/source
 export ROOTFSDIR=${WORKDIR}/rootfs
 export BUILDDIR=${WORKDIR}/build
-export ISODIR=${WORKDIR}/output/iso
+export OUTDIR=${WORKDIR}/output
+export ISODIR=${OUTDIR}/iso
 
 #cross compile
 export CROSS_COMPILE64=$BASEDIR/cross_gcc/x86_64-linux/bin/x86_64-linux-
@@ -51,7 +52,7 @@ prepare_dirs () {
 
     if [ ! -d ${WORKDIR} ]
     then
-	mkdir ${WORKDIR}
+	mkdir -p ${WORKDIR}
     fi    
     if [ ! -d ${SOURCEDIR} ];
     then
@@ -61,13 +62,17 @@ prepare_dirs () {
     then
         mkdir -p ${ROOTFSDIR}
     fi
-    if [ ! -d ${ISODIR} ];
-    then
-        mkdir -p ${ISODDIR}
-    fi
     if [ ! -d ${BUILDDIR} ];
     then
         mkdir -p ${BUILDDIR}
+    fi
+    if [ ! -d ${OUTDIR} ];
+    then
+        mkdir -p ${OUTDIR}
+    fi
+    if [ ! -d ${ISODIR} ];
+    then
+        mkdir -p ${ISODIR}
     fi
 }
 
